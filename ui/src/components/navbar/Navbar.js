@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 import {
   AppBar,
   Box,
@@ -43,12 +43,18 @@ const Navbar = () => {
   ];
   const [open, SetOpen] = useState(false);
   return (
-    <AppBar sx={{ background: "black",position:'fixed' }}>
+    <AppBar sx={{ background: "black", position: "fixed" }}>
       <StyledToolbar>
         <SocialBox>
-          <Facebook />
-          <Instagram />
-          <Twitter />
+          <a href="https:www.facebook.com">
+            <Facebook sx={{color:'white'}}/>
+          </a>
+          <a href="https:www.instagram.com">
+            <Instagram sx={{color:'white'}}/>
+          </a>
+          <a href="https:www.twitter.com">
+            <Twitter sx={{color:'white'}}/>
+          </a>
         </SocialBox>
         <MenuBox sx={{ display: { xs: "none", sm: "none", md: "flex" } }}>
           {MenuItems.map((item) => (
@@ -56,11 +62,15 @@ const Navbar = () => {
               sx={{
                 cursor: "pointer",
                 fontSize: "14px",
-                
               }}
             >
               {/* {item.Name} */}
-              <Link to={item.Link} style={{color:'white',textDecoration:'none'}}>{item.Name}</Link>
+              <Link
+                to={item.Link}
+                style={{ color: "white", textDecoration: "none" }}
+              >
+                {item.Name}
+              </Link>
             </Typography>
           ))}
         </MenuBox>
@@ -93,12 +103,23 @@ const Navbar = () => {
         <Box sx={{ width: 350, height: "90vh" }}>
           {MenuItems.map((item) => (
             <MenuItem
+              onClick={() => SetOpen(!open)}
               sx={{
                 cursor: "pointer",
                 fontSize: "14px",
+                "&:hover": {
+                  backgroundColor: "orange",
+                  color: "white",
+                  fontWeight: "700",
+                },
               }}
             >
-              <Link to={item.Link} sx={{color:'white'}}>{item.Name}</Link>
+              <Link
+                to={item.Link}
+                style={{ color: "black", textDecoration: "none" }}
+              >
+                {item.Name}
+              </Link>
               {/* {item.Name } */}
             </MenuItem>
           ))}
