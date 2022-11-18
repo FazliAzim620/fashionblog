@@ -79,7 +79,7 @@ useEffect(()=>{
 },[])
 
 const DeleteCard=(index)=>{
-  alert(index)
+
    let getData=newData.filter((item,ind)=>{
     return item.id!==index
 })
