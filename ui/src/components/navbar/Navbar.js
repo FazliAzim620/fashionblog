@@ -39,7 +39,7 @@ const Navbar = () => {
     { Name: "Products", Link: "/details" },
     { Name: "Portfolio", Link: "#" },
     { Name: "Blog", Link: "/blog" },
-    { Name: "Contact us", Link: "#" },
+    { Name: "Contact us", Link: "/contact" },
   ];
   const [open, SetOpen] = useState(false);
   return (
